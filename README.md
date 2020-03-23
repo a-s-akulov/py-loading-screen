@@ -3,8 +3,8 @@
 Module for Python - animated loading screen
 Used modules:
   1. asyncio
-  2. time.sleep
-  3. math.sin, math.cos, math,radians
+  2. math
+  3. time.sleep
   4. PyQt5.QtCore, PyQt5.QtWidgets, PyQt5.QtGui
 
 Tested on python: 3.7.4, windows: x32, x64
