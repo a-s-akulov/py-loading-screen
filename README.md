@@ -9,39 +9,42 @@ Used modules:
 
 Tested on python: 3.7.4, windows: x32, x64
 
-Installing:
+**Installing:**
 
     $ pip install py-loading-screen
 
-import:
+**import:**
 
     $ from pyLoadingScreen import LoadingScreen
 
 If by some reason you have not python interpreter - you can see compiled demo-application (windows): 'example\compiled'
 
-LoadingScreen(PyQt5.QtWidgets.QFrame)
+    LoadingScreen(PyQt5.QtWidgets.QFrame)
 
-Params:
+# **Params:**
 
     texts = ['Loading', 'Loading.', 'Loading..', 'Loading...'],
     textUpdateDelay = 0.75,
+
     parentWidget = None,
     windowSize = (350, 350),
     mainStyleSheet = "background-color: black; color: rgb(80, 0, 255);",
     mainFrameWidth = 3,
     textLabelStyleSheet = "background-color: black; color: white; font: bold 18px;",
-    animationFacesCount = 20,
+
+    animationType = "RoundRobin",       # Animation types available: "RoundRobin", "RibbonDance"
+    animationDetailСoefficient = 20,
     animationRGBColor = (255, 0, 0),
     animationColorRainbow = True,
     animationColorRainbowStep = 2,
     animationColorRainbowMinValues = (0, 0, 0),
     animationColorRainbowMaxValues = (255, 255, 255),
     animationLineWidth = 3,
-    animationScale = 0.9,
+    animationScale = 0.95,
     animationCountStepsPerRound = 1440
 
 
-Notes:
+# **Notes:**
 
     1. I recommend running this in a new thread. Anyway, you need to create instance of LoadingScreen at main thread, then start worker function in any thread.
         If you want to start in new 'clear' thread - use 'worker' function, else if you wont to create task with asyncio - use 'worker_asyncio' coroutine.
@@ -88,37 +91,19 @@ Notes:
     7. By some reason i can't create instance of LoadingScreen in Spyder (Anaconda, Python 3.7.4), but in outer program this work fine.
 
 
+# **Versions:**
+
+## **v1.1.4:**
+
++ Added 2nd animation type - "RibbonDance". Now available 2 animation types: "RoundRobin" (default) and "RibbonDance"
++ Added selection of animation type in example application
++ Improved animation quality by using float type coordinates instead of integer type
++ Renamed param "animationFacesCount" to "animationDetailСoefficient"
 
 
+## **v1.0.3:**
++ Bug fixes
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## **v1.0.2:**
++ Release on PyPI, now module is available using pip: 'pip install py-loading-screen'
